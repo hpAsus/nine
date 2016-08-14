@@ -1,0 +1,158 @@
+@import url(https://fonts.googleapis.com/css?family=Fredoka+One);
+@import url(https://fonts.googleapis.com/css?family=Space+Mono:400,700);
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
+
+body {
+    background: #eee;
+	padding-top: 2em;
+	font-family: 'Montserrat', sans-serif;
+	color: #666;
+}
+
+/* ------------------------------------------------------------------------------------------------------------------ */
+.game-title {
+	font-family: 'Fredoka One', cursive;
+	text-transform: uppercase;
+	color: crimson;
+	text-align: center
+}
+
+/* ------------------------------------------------------------------------------------------------------------------ */
+.panel {
+	text-align: center;
+	width: 600px;
+	padding: 2em 1em 4em 1em;
+    background: #fff;
+    margin: 0 auto;
+    -webkit-box-shadow: 0 10px 20px 0 rgba(0,0,0,0.1);
+    box-shadow: 0 10px 20px 0 rgba(0,0,0,0.1);
+	-webkit-border-radius: 7px;
+	border-radius: 7px;
+
+}
+/* ------------------------------------------------------------------------------------------------------------------ */
+.number {
+	
+}
+.number .digit {
+	display: inline-block;
+	padding: 10px 30px;
+	
+	font-family: 'Space Mono', Arial, sans-serif;
+	font-size: 60px;
+	color: #000;
+
+	border: 1px solid #eee;
+	-webkit-border-radius: 7px;
+	border-radius: 7px;
+	
+	-webkit-box-shadow: 0 10px 20px 0 rgba(0,0,0,0.1);
+    box-shadow: 0 10px 20px 0 rgba(0,0,0,0.1);
+}
+
+/* ------------------------------------------------------------------------------------------------------------------ */
+.turns {
+	width: 100%;
+	display: table;
+	margin-top: 2em;
+}
+.turns__header {
+	width: 100%;
+	display: table-row;
+}
+.turns .cell {
+	text-align: left;
+	display: table-cell;
+	padding: 0.5em;
+	border-bottom: 1px solid #ccc;
+}
+
+.turns__header .header__title { width: 20%;}
+.turns__header .header__number { width: 20%; text-align: center;}
+.turns__header .header__sheeps { width: 30%; text-align: center;}
+.turns__header .header__rams { width: 30%; text-align: center;}
+
+.turns .turn {
+	width: 100%;
+	display: table-row; 
+}
+.turn .turn__title { width: 20%;}
+.turn .turn__number {
+	width: 20%;
+	font-family: 'Space Mono', Arial, sans-serif;
+	font-weight: bold;
+	text-align: center;
+	color: #000;
+}
+.turn .turn__sheeps { width: 30%; text-align: center; }
+.turn .turn__rams { width: 30%; text-align: center;}
+
+/* ------------------------------------------------------------------------------------------------------------------ */
+.guess {
+	margin-top: 2em;
+}
+.guess .guess__input {
+	font-family: 'Space Mono', Arial, sans-serif;
+	font-size: 60px;
+	font-weight: bold;
+	text-align: center;
+	letter-spacing: 5px;
+	
+	display: block;
+	width: 180px;
+	margin: 0 auto;
+	outline: none;
+	
+	border: 1px solid #ddd;
+	-webkit-border-radius: 7px;
+	border-radius: 7px;
+	
+	-webkit-box-shadow: 0 10px 20px 0 rgba(0,0,0,0.1);
+    box-shadow: 0 10px 20px 0 rgba(0,0,0,0.1);
+}
+
+.guess .guess__button {
+	width: 180px;
+	margin: 1.5em 0;
+	padding: 1em;
+	
+	font-family: 'Fredoka One', cursive;
+	font-size: 20px;
+	color: #fff;
+	cursor: pointer;
+	
+	background: crimson;
+	border: 0;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+	
+	-webkit-box-shadow: 0 5px 20px 0 rgba(0,0,0,0.5);
+	box-shadow: 0 5px 20px 0 rgba(0,0,0,0.5);
+}
+.guess .guess__button:hover {
+	background: yellow;
+	color: #000;
+}
+
+/* ------------------------------------------------------------------------------------------------------------------ */
+
+.scorelist {
+	text-align: left;
+}
+.scorelist .scorelist__container {
+	list-style: none;
+	list-style-type: none;
+	padding: 0;
+}
+.scorelist .scorelist__row {
+	padding: 0.5em;
+	border-bottom: 1px solid #eee;
+}
+.scorelist .scorelist__title {}
+.scorelist .scorelist__score { 
+	float: right;
+	font-family: 'Fredoka One', cursive;
+	font-size: 30px;
+	letter-spacing: 2px;
+	color: crimson;
+}

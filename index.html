@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sheep-Rams Game</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="panel">
+    <h1 class="game-title">Sheep-Rams Game</h1>
+    <h3>Guess a number</h3>
+    <div class="number" id="number">
+    	<span id="digit1" class="digit">-</span>
+    	<span id="digit2" class="digit">-</span>
+    	<span id="digit3" class="digit">-</span>
+    	<span id="digit4" class="digit">-</span>
+    </div>
+    
+    <div class="turns">
+    	
+    	<div class="turns__header">
+    		<div class="cell header__title">Turn</div>
+    		<div class="cell header__number">Number</div>
+    		<div class="cell header__sheeps">Sheeps</div>
+    		<div class="cell header__rams">Rams</div>
+    	</div>
+    	
+
+		<div class="turn">
+			<div class="cell turn__title">Turn 1</div>
+			<div class="cell turn__number">0123</div>
+			<div class="cell turn__sheeps">2</div>
+			<div class="cell turn__rams">2</div>
+		</div>
+
+		<div class="turn">
+			<div class="cell turn__title">Turn 2</div>
+			<div class="cell turn__number">2458</div>
+			<div class="cell turn__sheeps">1</div>
+			<div class="cell turn__rams">3</div>
+		</div>
+
+		<div class="turn">
+			<div class="cell turn__title">Turn 3</div>
+			<div class="cell turn__number">8967</div>
+			<div class="cell turn__sheeps">0</div>
+			<div class="cell turn__rams">0</div>
+		</div>
+    	
+    </div>
+    
+    <div class="guess">
+		<input type="text" maxlength="4" id="guess-input" class="guess__input" value="0000">
+    	<button class="guess__button" id="guess-btn">Make a guess</button>
+    </div>
+    
+    <hr>
+    
+    <div class="scorelist">
+    	
+    	<ul class="scorelist__container">
+    		<li class="scorelist__row">
+    			<h2 class="scorelist__title">kaseopea <span class="scorelist__score">234</span></h2>
+    		</li>
+    		<li class="scorelist__row">
+    			<h2 class="scorelist__title">Marfa <span class="scorelist__score">214</span></h2>
+    		</li>
+    		<li class="scorelist__row">
+    			<h2 class="scorelist__title">Ivanko <span class="scorelist__score">200</span></h2>
+    		</li>
+    		<li class="scorelist__row">
+    			<h2 class="scorelist__title">Petro <span class="scorelist__score">156</span></h2>
+    		</li>
+    		<li class="scorelist__row">
+    			<h2 class="scorelist__title">Nastasia <span class="scorelist__score">102</span></h2>
+    		</li>
+    	</ul>
+    	
+    	
+    </div>
+</div>
+
+<script src="js/lodash.min.js"></script>
+<script src="js/sheeprams.js"></script>
+</body>
+</html>
