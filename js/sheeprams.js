@@ -1,6 +1,6 @@
 // todo
-// add only numbers validation for guess-input
-// clear input data on click
+// for guess-input on submit check if it's 4 digits number
+
 
 (function () {
 
@@ -16,8 +16,26 @@
     guessInput.addEventListener('click', function (ev) {
         this.value = '';
     });
+
+    // only digits
     guessInput.addEventListener('keydown', function (ev) {
-        console.log(ev);
-        return ("0123456789".indexOf(ev.key) > -1);
+        if (ev.keyCode >= 48 && ev.keyCode <= 57) {
+            return true;
+        } else {
+            ev.preventDefault();
+            return false;
+        }
     });
+
+
+    // PC Number Generator
+    function generateNumber() {
+        return '0' + _.random(100,999);
+    }
+
+    // setInterval(function () {
+    //     console.log(generateNumber());
+    // }, 1000);
+
+
 })();
