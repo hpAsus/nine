@@ -16,46 +16,30 @@
     	<span id="digit3" class="digit">-</span>
     	<span id="digit4" class="digit">-</span>
     </div>
+
+	<div id="winner" class="winner none">
+		<h2 class="winner__title">Winner!</h2>
+		<p>What is your nickname?</p>
+		<div><input type="text" name="nickname" class="winner__nickname" id="winner-input"></div>
+		<button class="winner__button" id="winner-btn">Submit</button>
+	</div>
+
     
     <div id="turns" class="turns">
-    	
     	<div class="turns__header">
     		<div class="cell header__title">Turn</div>
     		<div class="cell header__number">Number</div>
     		<div class="cell header__sheeps">Sheeps</div>
     		<div class="cell header__rams">Rams</div>
     	</div>
-    	
-
-		<!--<div class="turn">-->
-			<!--<div class="cell turn__title">Turn 1</div>-->
-			<!--<div class="cell turn__number">0123</div>-->
-			<!--<div class="cell turn__sheeps">2</div>-->
-			<!--<div class="cell turn__rams">2</div>-->
-		<!--</div>-->
-
-		<!--<div class="turn">-->
-			<!--<div class="cell turn__title">Turn 2</div>-->
-			<!--<div class="cell turn__number">2458</div>-->
-			<!--<div class="cell turn__sheeps">1</div>-->
-			<!--<div class="cell turn__rams">3</div>-->
-		<!--</div>-->
-
-		<!--<div class="turn">-->
-			<!--<div class="cell turn__title">Turn 3</div>-->
-			<!--<div class="cell turn__number">8967</div>-->
-			<!--<div class="cell turn__sheeps">0</div>-->
-			<!--<div class="cell turn__rams">0</div>-->
-		<!--</div>-->
-    	
     </div>
     
-    <div class="guess">
+    <div id="guess" class="guess">
 		<input type="text" maxlength="4" id="guess-input" class="guess__input" value="0000">
     	<button class="guess__button" id="guess-btn">Make a guess</button>
     </div>
-    
-    <hr>
+
+
     
     <div class="scorelist none">
     	
@@ -76,8 +60,7 @@
     			<h2 class="scorelist__title">Nastasia <span class="scorelist__score">102</span></h2>
     		</li>
     	</ul>
-    	
-    	
+
     </div>
 </div>
 

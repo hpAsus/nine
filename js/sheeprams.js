@@ -9,15 +9,26 @@
         var options = {
             guessInputID: 'guess-input',
             guessBtnID: 'guess-btn',
-            turnsListID: 'turns'
+            guessFormID: 'guess',
+            turnsListID: 'turns',
+            secretID: 'number',
+            winnerFormID: 'winner',
+            winnerBtnID: 'winner-btn',
+            winnerInputID: 'winner-input'
         };
         var secret = generateSecret();
         var turns = [];
+        var nickname;
 
         // get controls
         var guessInput = document.getElementById(options.guessInputID);
         var guessBtn = document.getElementById(options.guessBtnID);
+        var guessForm = document.getElementById(options.guessFormID);
         var turnsList = document.getElementById(options.turnsListID);
+        var secretNumber = document.getElementById(options.secretID);
+        var winnerForm = document.getElementById(options.winnerFormID);
+        var winnerBtn = document.getElementById(options.winnerBtnID);
+        var winnerInput = document.getElementById(options.winnerInputID);
 
         //clear guess input on click
         guessInput.addEventListener('click', function (ev) {
@@ -35,34 +46,83 @@
                 return false;
             }
         });
-
         console.log(secret);
-        //
+
+        //Main Guess Event
         guessBtn.addEventListener('click', function (ev) {
-            var turnResults = countSheepsNRams(secret, guessInput.value);
+            var userGuess = guessInput.value;
+            var turnResults = countSheepsNRams(secret, userGuess);
             var currentIndex = turns.length + 1;
             var currentTurn = {
                 index: currentIndex,
-                guess: guessInput.value,
+                guess: userGuess,
                 sheeps: turnResults.sheeps,
                 rams: turnResults.rams
             };
+            var alreadyGuessed = false;
 
-            //check for last turn
-            if (turns.length) {
-                if (turns[turns.length].guess !== guessInput.value) {
-                    var turnHTML = renderTurn(currentTurn);
-                    turnsList.appendChild(turnHTML);
-                    turns.push(currentTurn);
-                } else {
-                    //render error about same number
+            _.forEach(turns, function (turn) {
+                if (turn.guess === userGuess) {
+                    alreadyGuessed = true;
                 }
+
+            });
+            //check for last turn
+            if (!alreadyGuessed) {
+                var turnHTML = renderTurn(currentTurn);
+                turnsList.appendChild(turnHTML);
+                turns.push(currentTurn);
+
+                //check if user wins
+                if (currentTurn.rams === 4) {
+                    // render secret
+                    renderSecret(secret);
+                    turnsList.classList.add('none');
+                    guessForm.classList.add('none');
+                    winnerForm.classList.remove('none');
+                } else {
+                    turnsList.appendChild(turnHTML);
+                }
+
+            } else {
+                //render error about same number
+                var error = renderGuessError('Already guessed this number!');
+                guessForm.appendChild(error);
+                setTimeout(function () {
+                    guessForm.removeChild(error);
+                }, 2000);
             }
 
         });
 
+        winnerBtn.addEventListener('click', function (ev) {
+            nickname = winnerInput.value;
+            //get player score
+        });
+
     }
 
+    function renderSecret(secret) {
+        var digits = secret.split('');
+        var digit1 = document.getElementById('digit1');
+        var digit2 = document.getElementById('digit2');
+        var digit3 = document.getElementById('digit3');
+        var digit4 = document.getElementById('digit4');
+
+        digit1.innerText = digits[0];
+        digit2.innerText = digits[1];
+        digit3.innerText = digits[2];
+        digit4.innerText = digits[3];
+    }
+
+    function renderGuessError(message) {
+        var error;
+        error = document.createElement('div');
+        error.className = 'guess__error';
+        error.innerText = message;
+
+        return error;
+    }
 
     function renderTurn(turnData) {
         var turnLine = document.createDocumentFragment();

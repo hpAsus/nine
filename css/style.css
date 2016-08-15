@@ -10,10 +10,6 @@ body {
 }
 
 /* ------------------------------------------------------------------------------------------------------------------ */
-.none {
-	display: none;
-}
-/* ------------------------------------------------------------------------------------------------------------------ */
 .game-title {
 	font-family: 'Fredoka One', cursive;
 	text-transform: uppercase;
@@ -137,7 +133,11 @@ body {
 	background: yellow;
 	color: #000;
 }
-
+.guess__error {
+	color: crimson;
+	border: 1px solid crimson;
+	padding: 20px;
+}
 /* ------------------------------------------------------------------------------------------------------------------ */
 
 .scorelist {
@@ -159,4 +159,45 @@ body {
 	font-size: 30px;
 	letter-spacing: 2px;
 	color: crimson;
+}
+
+/* ------------------------------------------------------------------------------------------------------------------ */
+.winner {
+	font-family: 'Fredoka One', cursive;
+	text-transform: uppercase;
+	margin: 2em 0;
+	text-align: center;
+}
+.winner .winner__title {
+	font-size: 60px;
+	color: crimson;
+}
+.winner .winner__nickname {
+	display: inline-block;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 20px;
+	padding: .5em 1em;
+}
+.winner .winner__button {
+	margin: 1.5em 0;
+	padding: 0.5em 2em;
+
+	font-family: 'Fredoka One', cursive;
+	text-transform: uppercase;
+	font-size: 16px;
+	color: #fff;
+	cursor: pointer;
+
+	background: crimson;
+	border: 0;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+
+	-webkit-box-shadow: 0 5px 20px 0 rgba(0,0,0,0.5);
+	box-shadow: 0 5px 20px 0 rgba(0,0,0,0.5);
+}
+
+/* ------------------------------------------------------------------------------------------------------------------ */
+.none {
+	display: none;
 }
