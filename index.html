@@ -9,7 +9,7 @@
 
 <div class="panel">
     <h1 class="game-title">Sheep-Rams Game</h1>
-    <h3>Guess a number</h3>
+    <h3 id="greeting">Guess a number</h3>
     <div class="number" id="number">
     	<span id="digit1" class="digit">-</span>
     	<span id="digit2" class="digit">-</span>
@@ -19,6 +19,10 @@
 
 	<div id="winner" class="winner none">
 		<h2 class="winner__title">Winner!</h2>
+		<div class="winner__results">
+			<span class="winner__time">Time <span id="timeSpent" class="time"></span></span>
+			<span class="winner__score">Score <span id="scoreFinal" class="score"></span></span>
+		</div>
 		<p>What is your nickname?</p>
 		<div><input type="text" name="nickname" class="winner__nickname" id="winner-input"></div>
 		<button class="winner__button" id="winner-btn">Submit</button>
@@ -35,36 +39,25 @@
     </div>
     
     <div id="guess" class="guess">
-		<input type="text" maxlength="4" id="guess-input" class="guess__input" value="0000">
+		<input type="text" maxlength="4" id="guess-input" class="guess__input">
     	<button class="guess__button" id="guess-btn">Make a guess</button>
     </div>
 
 
     
-    <div class="scorelist none">
+    <div id="scorelist" class="scorelist none">
     	
-    	<ul class="scorelist__container">
-    		<li class="scorelist__row">
-    			<h2 class="scorelist__title">kaseopea <span class="scorelist__score">234</span></h2>
-    		</li>
-    		<li class="scorelist__row">
-    			<h2 class="scorelist__title">Marfa <span class="scorelist__score">214</span></h2>
-    		</li>
-    		<li class="scorelist__row">
-    			<h2 class="scorelist__title">Ivanko <span class="scorelist__score">200</span></h2>
-    		</li>
-    		<li class="scorelist__row">
-    			<h2 class="scorelist__title">Petro <span class="scorelist__score">156</span></h2>
-    		</li>
-    		<li class="scorelist__row">
-    			<h2 class="scorelist__title">Nastasia <span class="scorelist__score">102</span></h2>
-    		</li>
-    	</ul>
+
+		<div class="scorelist__actions">
+			<button id="tryagain" class="try-again-btn">Try again?</button>
+		</div>
 
     </div>
+
 </div>
 
 <script src="js/lodash.min.js"></script>
+<script src="js/modernizr.js"></script>
 <script src="js/sheeprams.js"></script>
 </body>
 </html>
