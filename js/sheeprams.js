@@ -66,7 +66,7 @@
         var winnerScore = document.getElementById(options.winnerScoreID);
         var greeting = document.getElementById(options.greetingID);
 
-        console.log(secret);
+        // console.log(secret);
 
         //EVENTS
         //==============================================================================================================
@@ -418,8 +418,6 @@
         }
 
     }
-
     game();
-
 
 })();
