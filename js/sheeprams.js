@@ -190,10 +190,6 @@
         function winnerAction(ev) {
             var usernameCheck = new RegExp('^((\\w)*(\\s)?)*$', 'gmi');
 
-            console.log(usernameCheck.test('kaseopea'));
-            console.log(usernameCheck.test('kaseopea+'));
-            console.log(usernameCheck.test('kaseopea()'));
-
             if (usernameCheck.test(winnerInput.value)) {
                 userObj.nickname = winnerInput.value;
 
@@ -380,7 +376,12 @@
         // Secret Number Generator
         //==============================================================================================================
         function generateSecret() {
-            return '0' + _.random(100, 999);
+            var digits = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+            digits.sort(function () {
+                return Math.random() - 0.5
+            });
+
+            return '0' + digits.slice(0, 3).join('');
         }
 
         // Sheeps and Rams Counter
@@ -416,8 +417,8 @@
                 return false;
             }
         }
-
     }
+
     game();
 
 })();
